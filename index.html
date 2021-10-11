@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment2</title>
+</head>
+<body>
+    <center>
+    <h1><center>ChatBot  Assignment 2</center></h1>
+    <h2>USD To Pkr Inter Converter</h2>
+    <form name="converter">
+        <table border="0">
+        <tr>
+        <!-- <td>Euro: </td><td><input type="text" name="euro" onChange="euroConverter()" /></td>
+        </tr>
+        <tr> -->
+        <td>USD: </td><td><input type="text" name="dollar" onChange="dollarConverter()" /></td>
+        </tr>
+        <tr>
+        <td>Pkr:</td><td><input type="text" name="ruppee" onChange="ruppeeConverter()" /></td>
+        </tr>
+        <!-- <tr>
+        <td>Japanese Yen: </td><td><input type="text" name="yen" onChange="yenConverter()" /></td>
+        </tr> -->
+        <tr>
+        <td colspan="2" align="center"><input type="button" value="Convert!" /></td>
+        </tr>
+        </table>
+        </form>
+        <br>
+        <h2>Weather Forcast</h2>
+        <form>
+ 
+            <input type="number" id="Temperature" placeholder="Enter temperature">
+            <!-- <input type="text" id="result" placeholder="result"> -->
+            </form>
+        <br>
+        <button onclick ="myfunction()">check</button>
+        <br>
+        <h3 id = "result"></h3>
+        </center>
+
+       <center> 
+        <h2>Grade Checker</h2>
+        <form>
+<!--  
+            <input type="text" id="Name" placeholder="Enter Name">
+            <br>
+            <br>
+            <input type="text" id="Father Name" placeholder="Enter Father's Name">
+            <br>
+            <br>
+            <input type="number" id="marks" placeholder="Enter Marks"> -->
+
+             <input type="text" id="result" placeholder="result"> -->
+            </form>
+        <br>
+        <button onclick ="grade_checker()">Check Grade</button>
+        <br>
+        <h2 id = "result1"></h2>
+        <br>
+        </center>       <!-- <h2 id = "Name"></h2>
+        <br>
+        <h2 id="Father Name"></h2> -->
+        
+
+    <script>
+        function ruppeeConverter(){
+document.converter.dollar.value = document.converter.euro.value / 171.08
+// document.converter.pound.value = document.converter.euro.value * 0.717
+// document.converter.yen.value = document.converter.euro.value * 165.192
+}
+function dollarConverter(){
+document.converter.ruppee.value = document.converter.dollar.value * 171.08
+// document.converter.pound.value = document.converter.dollar.value * 0.488
+// document.converter.yen.value = document.converter.dollar.value * 112.36
+}
+// function poundConverter(){
+// document.converter.dollar.value = document.converter.pound.value * 2.049
+// document.converter.euro.value = document.converter.pound.value * 1.394
+// document.converter.yen.value = document.converter.pound.value * 230.27
+// }
+// function yenConverter(){
+// document.converter.dollar.value = document.converter.yen.value * 0.0089
+// document.converter.pound.value = document.converter.yen.value * 0.00434
+// document.converter.euro.value = document.converter.yen.value * 0.00605
+// }
+    function myfunction(){
+       
+        let temperature = document.getElementById("Temperature").value
+        if(temperature >=25){          // only return true or false
+            //alert("don't carry jacket");
+            document.getElementById("result").innerText = "Don't Carry Jacket"
+
+        }
+        else if(temperature <25 && temperature>=15){
+            //alert("carry jacket"); 
+            document.getElementById("result").innerText = "Carry Jacket" 
+        }
+
+        else if(!temperature<15 && temperature>=0){          // falsy are 0, undefined, "", Nan, faslse. rest are all true in if
+           // alert("Carry a Coat with Jacket");
+            document.getElementById("result").innerText = "Carry a Coat with Jacket"
+
+        }
+        else{
+           // alert("Don't go out!!!"); 
+            document.getElementById("result").innerText = "Don't Go Out!!!" 
+        }
+    }
+    function grade_checker(){
+        let mark = document.getElementById("marks").value;
+        if(mark >=80){
+            document.getElementById("result1").innerText = "Grade A1"
+
+        }else if ((mark>=70) && (mark <=79)){
+            document.getElementById("result1").innerText = "Grade A"
+        }else if ((mark>=60) && (mark <=69)){
+            document.getElementById("result1").innerText = "Grade B"
+        }else{
+            document.getElementById("result1").innerText = "Fail"
+        }
+    }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
